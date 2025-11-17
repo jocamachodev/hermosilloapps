@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermosillo Apps - Soluciones Empresariales en Power Platform</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hermosillo Apps</title>
+
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
+            background-color: #f5f5f5;
+        }
+
+        /* MENÚ SUPERIOR */
+        header {
+            background: #ffffffcc;
+            backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header .logo {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
             color: #333;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        header nav a:hover {
+            color: #663bff;
         }
 
         /* HERO */
         .hero {
-            background: linear-gradient(135deg, #5A2EFF, #7B3FFF);
-            padding: 80px 20px;
+            padding: 160px 20px 120px;
             text-align: center;
+            background: linear-gradient(135deg, #4b2be3, #7b5bff);
             color: white;
         }
 
@@ -26,176 +61,234 @@
         }
 
         .hero h1 {
-            margin: 0;
             font-size: 42px;
-            font-weight: bold;
+            margin: 10px 0;
         }
 
-        .hero h3 {
-            margin-top: 10px;
-            font-size: 20px;
-            font-weight: normal;
+        /* SECCIONES */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
         }
 
-        /* Secciones */
-        .section {
-            max-width: 950px;
-            margin: 50px auto;
-            padding: 0 20px;
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        /* TARJETAS DE SERVICIOS */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px #00000015;
             text-align: center;
         }
 
-        .section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #4a3ccf;
+        .card img {
+            height: 55px;
+            margin-bottom: 10px;
         }
 
-        .services {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 30px;
+        /* PORTAFOLIO */
+        .portfolio-item {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px #00000015;
+            margin-bottom: 25px;
         }
 
-        .service {
-            width: 150px;
-            margin: 15px;
+        /* SOBRE MI */
+        .about {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px #00000015;
         }
 
-        .service img {
-            width: 70px;
-            height: 70px;
+        /* CONTACTO */
+        .contact {
+            text-align: center;
         }
 
-        .service p {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        /* Contacto */
-        .contact-box {
-            background: #f7f7f7;
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-box a {
-            text-decoration: none;
-            font-size: 18px;
-            color: #ffffff;
-            background: #5A2EFF;
-            padding: 12px 20px;
-            border-radius: 8px;
+        .contact a {
             display: inline-block;
             margin: 10px;
+            padding: 12px 18px;
+            background: #663bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
         }
 
-        /* Footer */
+        .contact a:hover {
+            background: #4320c7;
+        }
+
         footer {
-            margin-top: 60px;
-            padding: 20px;
             text-align: center;
-            font-size: 14px;
-            background: #f0f0f0;
+            padding: 25px;
+            background: #222;
+            color: #eee;
+            margin-top: 40px;
         }
-
-        /* Responsive */
-        @media (max-width: 700px) {
-            .service {
-                width: 45%;
-            }
-        }
-
     </style>
 </head>
+
 <body>
 
-    <!-- HERO -->
-    <div class="hero">
-        <img src="tu-logo.png" alt="Logo Hermosillo Apps">
-        <h1>Hermosillo Apps</h1>
-        <h3>Aplicaciones empresariales con Microsoft Power Platform</h3>
+<!-- MENÚ -->
+<header>
+    <div class="logo">
+        <img src="logo.png" width="40" />
+        Hermosillo Apps
     </div>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
 
-    <!-- ¿Qué hacemos? -->
-    <div class="section">
-        <h2>¿Qué hacemos?</h2>
-        <p>
-            Desarrollamos soluciones a la medida para empresas que desean 
-            <strong>automatizar procesos, eliminar el papel y mejorar la productividad</strong>
-            mediante las herramientas de Microsoft Power Platform.
-        </p>
-        <p>
-            Creamos aplicaciones móviles, flujos automatizados, dashboards ejecutivos,
-            sitios externos para clientes o contratistas y herramientas digitales que
-            facilitan la operación de tu negocio.
-        </p>
-    </div>
+<!-- HERO -->
+<div class="hero" id="inicio">
+    <img src="logo.png" alt="Logo" />
+    <h1>Hermosillo Apps</h1>
+    <p style="font-size:18px;">Aplicaciones Empresariales en Microsoft Power Platform</p>
+</div>
 
-    <!-- Servicios -->
-    <div class="section">
-        <h2>Servicios</h2>
+<!-- SERVICIOS -->
+<section id="servicios">
+    <h2>Servicios</h2>
+    <div class="services">
 
-        <div class="services">
-
-            <div class="service">
-                <img src="icons/powerapps.png" alt="Power Apps">
-                <p>Power Apps</p>
-            </div>
-
-            <div class="service">
-                <img src="icons/powerautomate.png" alt="Power Automate">
-                <p>Power Automate</p>
-            </div>
-
-            <div class="service">
-                <img src="icons/powerbi.png" alt="Power BI">
-                <p>Power BI</p>
-            </div>
-
-            <div class="service">
-                <img src="icons/powerpages.png" alt="Power Pages">
-                <p>Power Pages</p>
-            </div>
-
-            <div class="service">
-                <img src="icons/dataverse.png" alt="Dataverse">
-                <p>Dataverse</p>
-            </div>
-
-            <div class="service">
-                <img src="icons/sharepoint.png" alt="SharePoint">
-                <p>SharePoint</p>
-            </div>
-
+        <div class="card">
+            <img src="powerapps.png" />
+            <h3>Power Apps</h3>
+            <p>Aplicaciones empresariales personalizadas.</p>
         </div>
-    </div>
 
-    <!-- ¿Por qué elegir Hermosillo Apps? -->
-    <div class="section">
-        <h2>¿Por qué elegirnos?</h2>
-        <p>✔ Soluciones rápidas y personalizadas</p>
-        <p>✔ Especialista en automatización y procesos industriales</p>
-        <p>✔ Experiencia real en entornos operativos y administrativos</p>
-        <p>✔ Atención directa, sin intermediarios</p>
-        <p>✔ Resultados inmediatos y medibles</p>
-    </div>
-
-    <!-- Contacto -->
-    <div class="section">
-        <h2>Contacto</h2>
-
-        <div class="contact-box">
-            <a href="https://wa.me/526624323702" target="_blank">WhatsApp</a>
-            <a href="mailto:jocamacho.dev@gmail.com">Enviar correo</a>
+        <div class="card">
+            <img src="powerautomate.png" />
+            <h3>Power Automate</h3>
+            <p>Automatización de procesos y flujos.</p>
         </div>
+
+        <div class="card">
+            <img src="powerbi.png" />
+            <h3>Power BI</h3>
+            <p>Dashboards y análisis de datos.</p>
+        </div>
+
+        <div class="card">
+            <img src="dataverse.png" />
+            <h3>Dataverse</h3>
+            <p>Bases de datos empresariales.</p>
+        </div>
+
+        <div class="card">
+            <img src="sharepoint.png" />
+            <h3>SharePoint</h3>
+            <p>Gestión documental y automatización.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PORTAFOLIO -->
+<section id="portafolio">
+    <h2>Portafolio</h2>
+
+    <div class="portfolio-item">
+        <h3>SCM – Subgerencia de Confiabilidad y Mantenimiento</h3>
+        <p>Desarrollo de app empresarial para gestión de flotas ATUM, fallas, reportes y disponibilidad.</p>
     </div>
 
-    <footer>
-        © 2025 Hermosillo Apps · Todos los derechos reservados.
-    </footer>
+    <div class="portfolio-item">
+        <h3>TAD Hermosillo — Aplicaciones internas</h3>
+        <p>Sistemas personalizados para control de documentos, registros de mantenimiento y reportes operativos.</p>
+    </div>
+
+    <div class="portfolio-item">
+        <h3>Automatización con Power Automate</h3>
+        <p>Flujos automáticos para carga de archivos, generación de PDFs, envío de notificaciones y dashboards.</p>
+    </div>
+</section>
+
+<!-- SOBRE MI -->
+<section id="sobre-mi">
+    <h2>Sobre mí</h2>
+
+    <div class="about">
+        <p>
+            Soy <strong>Jorge Camacho</strong>, Ingeniero en Sistemas Computacionales con
+            <strong>más de 20 años de experiencia como Jefe de Mantenimiento</strong> en la industria petrolera.
+        </p>
+
+        <p>
+            A lo largo de mi carrera he trabajado directamente con
+            <strong>operaciones, mantenimiento, confiabilidad y administración de activos</strong>,
+            lo que me ha dado una comprensión profunda de las
+            <strong>necesidades reales de información, control y trazabilidad</strong>
+            que requieren las empresas para operar con eficiencia y seguridad.
+        </p>
+
+        <p>
+            Con el tiempo descubrí que muchos de los problemas operativos que enfrentamos día a día
+            podían resolverse mejorando los flujos de información.
+            Esa experiencia me llevó a especializarme en <strong>Microsoft Power Platform</strong>,
+            desarrollando soluciones empresariales a la medida con:
+        </p>
+
+        <ul>
+            <li>Power Apps</li>
+            <li>Power Automate</li>
+            <li>Power BI</li>
+            <li>SharePoint</li>
+            <li>Dataverse</li>
+        </ul>
+
+        <p>
+            Mis aplicaciones ayudan a los equipos a
+            <strong>digitalizar procesos, reducir tiempos, eliminar papel, automatizar reportes operativos</strong>
+            y mejorar la toma de decisiones mediante información en tiempo real.
+        </p>
+
+        <p>
+            <strong>
+            Mi formación como Ingeniero en Sistemas, sumada a más de 20 años en mantenimiento industrial,
+            me permite entender tanto la lógica de negocio como la realidad del piso de planta.
+            </strong>
+            Esa perspectiva dual es la base de cada solución que desarrollo.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+    <h2>Contacto</h2>
+
+    <div class="contact">
+        <a href="https://wa.me/526624323702" target="_blank">WhatsApp</a>
+        <a href="mailto:jocamacho.dev@gmail.com">Enviar correo</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Hermosillo Apps – Todos los derechos reservados.
+</footer>
 
 </body>
 </html>
