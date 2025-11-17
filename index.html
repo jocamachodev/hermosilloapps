@@ -1,108 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>hermosilloApps</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermosillo Apps • Aplicaciones Empresariales</title>
-
+    <title>Hermosillo Apps - Soluciones Empresariales en Power Platform</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-            color: #222;
+            background-color: #ffffff;
+            color: #333;
         }
 
-        header {
-            background: linear-gradient(135deg, #3626a7, #4f39d9, #7257ff);
-            padding: 60px 20px;
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #5A2EFF, #7B3FFF);
+            padding: 80px 20px;
             text-align: center;
             color: white;
         }
 
-        header img {
-            width: 130px;
+        .hero img {
+            width: 120px;
             margin-bottom: 20px;
         }
 
-        h1 {
-            font-size: 48px;
-            margin: 10px 0;
-            font-weight: 800;
+        .hero h1 {
+            margin: 0;
+            font-size: 42px;
+            font-weight: bold;
         }
 
-        h2 {
-            font-size: 22px;
-            opacity: .9;
-            margin-top: -10px;
+        .hero h3 {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: normal;
         }
 
+        /* Secciones */
         .section {
-            padding: 60px 40px;
+            max-width: 950px;
+            margin: 50px auto;
+            padding: 0 20px;
             text-align: center;
         }
 
-        .logos {
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #4a3ccf;
+        }
+
+        .services {
             display: flex;
-            justify-content: center;
-            gap: 45px;
+            justify-content: space-around;
             flex-wrap: wrap;
             margin-top: 30px;
         }
 
-        .logos img {
-            width: 90px;
-            height: auto;
+        .service {
+            width: 150px;
+            margin: 15px;
         }
 
+        .service img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .service p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Contacto */
+        .contact-box {
+            background: #f7f7f7;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-box a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            background: #5A2EFF;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        /* Footer */
         footer {
-            margin-top: 80px;
+            margin-top: 60px;
             padding: 20px;
-            background: #f2f2f2;
             text-align: center;
             font-size: 14px;
+            background: #f0f0f0;
         }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .service {
+                width: 45%;
+            }
+        }
+
     </style>
 </head>
-
 <body>
 
-    <header>
-        <img src="logo.png" alt="Logo Hermosillo Apps">
+    <!-- HERO -->
+    <div class="hero">
+        <img src="tu-logo.png" alt="Logo Hermosillo Apps">
         <h1>Hermosillo Apps</h1>
-        <h2>Aplicaciones Empresariales en Microsoft Power Platform</h2>
-    </header>
+        <h3>Aplicaciones empresariales con Microsoft Power Platform</h3>
+    </div>
 
-    <section class="section">
-        <h2>Desarrollamos soluciones a la medida con:</h2>
+    <!-- ¿Qué hacemos? -->
+    <div class="section">
+        <h2>¿Qué hacemos?</h2>
+        <p>
+            Desarrollamos soluciones a la medida para empresas que desean 
+            <strong>automatizar procesos, eliminar el papel y mejorar la productividad</strong>
+            mediante las herramientas de Microsoft Power Platform.
+        </p>
+        <p>
+            Creamos aplicaciones móviles, flujos automatizados, dashboards ejecutivos,
+            sitios externos para clientes o contratistas y herramientas digitales que
+            facilitan la operación de tu negocio.
+        </p>
+    </div>
 
-        <div class="logos">
-            <img src="powerapps.png" alt="Power Apps">
-            <img src="powerautomate.png" alt="Power Automate">
-            <img src="powerbi.png" alt="Power BI">
-            <img src="dataverse.png" alt="Dataverse">
-            <img src="sharepoint.png" alt="SharePoint">
+    <!-- Servicios -->
+    <div class="section">
+        <h2>Servicios</h2>
+
+        <div class="services">
+
+            <div class="service">
+                <img src="icons/powerapps.png" alt="Power Apps">
+                <p>Power Apps</p>
+            </div>
+
+            <div class="service">
+                <img src="icons/powerautomate.png" alt="Power Automate">
+                <p>Power Automate</p>
+            </div>
+
+            <div class="service">
+                <img src="icons/powerbi.png" alt="Power BI">
+                <p>Power BI</p>
+            </div>
+
+            <div class="service">
+                <img src="icons/powerpages.png" alt="Power Pages">
+                <p>Power Pages</p>
+            </div>
+
+            <div class="service">
+                <img src="icons/dataverse.png" alt="Dataverse">
+                <p>Dataverse</p>
+            </div>
+
+            <div class="service">
+                <img src="icons/sharepoint.png" alt="SharePoint">
+                <p>SharePoint</p>
+            </div>
+
         </div>
-    </section>
+    </div>
+
+    <!-- ¿Por qué elegir Hermosillo Apps? -->
+    <div class="section">
+        <h2>¿Por qué elegirnos?</h2>
+        <p>✔ Soluciones rápidas y personalizadas</p>
+        <p>✔ Especialista en automatización y procesos industriales</p>
+        <p>✔ Experiencia real en entornos operativos y administrativos</p>
+        <p>✔ Atención directa, sin intermediarios</p>
+        <p>✔ Resultados inmediatos y medibles</p>
+    </div>
+
+    <!-- Contacto -->
+    <div class="section">
+        <h2>Contacto</h2>
+
+        <div class="contact-box">
+            <a href="https://wa.me/526624323702" target="_blank">WhatsApp</a>
+            <a href="mailto:jocamacho.dev@gmail.com">Enviar correo</a>
+        </div>
+    </div>
 
     <footer>
-        © 2025 Hermosillo Apps • Todos los derechos reservados.
+        © 2025 Hermosillo Apps · Todos los derechos reservados.
     </footer>
 
 </body>
-</html>
-    
-  </body>
-  
 </html>
