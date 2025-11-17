@@ -2,293 +2,647 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hermosillo Apps</title>
+    <title>Hermosillo Apps – Aplicaciones Empresariales en Microsoft Power Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+        name="description"
+        content="Hermosillo Apps desarrolla aplicaciones empresariales a la medida con Microsoft Power Platform: Power Apps, Power Automate, Power BI, SharePoint y Dataverse."
+    />
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* =========================
+           ESTILOS GENERALES
+        ========================== */
+        :root {
+            --morado-oscuro: #4320c7;
+            --morado-medio: #5a32ff;
+            --morado-claro: #8b6dff;
+            --gris-fondo: #f5f5f7;
+            --texto-principal: #121212;
+            --texto-suave: #555;
+            --blanco: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            background-color: #f5f5f5;
+            padding: 0;
         }
 
-        /* MENÚ SUPERIOR */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Helvetica, Arial, sans-serif;
+            color: var(--texto-principal);
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        section {
+            padding: 64px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+        }
+
+        h2.section-title {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 2rem;
+        }
+
+        p.section-subtitle {
+            text-align: center;
+            margin-bottom: 32px;
+            color: var(--texto-suave);
+        }
+
+        /* =========================
+           HEADER + NAV
+        ========================== */
+
         header {
-            background: #ffffffcc;
-            backdrop-filter: blur(8px);
-            position: fixed;
+            position: sticky;
             top: 0;
-            width: 100%;
-            z-index: 10;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
+            z-index: 100;
+            background: linear-gradient(90deg, var(--morado-oscuro), var(--morado-medio));
+            color: var(--blanco);
         }
 
-        header .logo {
-            font-weight: bold;
+        .nav-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 20px;
-            color: #333;
         }
 
-        header nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
+        .logo-area img {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.1;
+        }
+
+        /* Ítems de navegación (escritorio) */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
             font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        header nav a:hover {
-            color: #663bff;
+        nav a {
+            text-decoration: none;
+            color: var(--blanco);
         }
 
-        /* HERO */
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Botón hamburguesa (móvil) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            width: 26px;
+            height: 20px;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            border-radius: 999px;
+            background: var(--blanco);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        /* =========================
+           HERO (PORTADA)
+        ========================== */
+
         .hero {
-            padding: 160px 20px 120px;
+            background: linear-gradient(135deg, var(--morado-oscuro), var(--morado-medio));
+            color: var(--blanco);
             text-align: center;
-            background: linear-gradient(135deg, #4b2be3, #7b5bff);
-            color: white;
+            padding: 80px 20px 72px;
         }
 
-        .hero img {
-            width: 120px;
-            margin-bottom: 20px;
+        .hero-logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 999px;
+    margin: 0 auto 24px;
+    background: transparent; /* CÍRCULO ELIMINADO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+        .hero-logo img {
+            width: 90px;
+            height: 90px;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin: 10px 0;
+            font-size: clamp(2.4rem, 4vw, 3.2rem);
+            margin-bottom: 8px;
         }
 
-        /* SECCIONES */
-        section {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: auto;
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 620px;
+            margin: 0 auto 24px;
         }
 
-        h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 40px;
+        .hero-cta {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
         }
 
-        /* TARJETAS DE SERVICIOS */
-        .services {
+        .btn-primary,
+        .btn-secondary {
+            border-radius: 999px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background: var(--blanco);
+            color: var(--morado-oscuro);
+        }
+
+        .btn-primary:hover {
+            background: #f2f2ff;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--blanco);
+            border: 1px solid #ffffff80;
+        }
+
+        .btn-secondary:hover {
+            background: #ffffff15;
+        }
+
+        /* =========================
+           SECCIÓN SERVICIOS
+        ========================== */
+
+        #servicios {
+            background: var(--gris-fondo);
+        }
+
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
         }
 
         .card {
-            background: white;
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px #00000015;
+            background: var(--blanco);
+            border-radius: 18px;
+            padding: 24px 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
             text-align: center;
         }
 
         .card img {
-            height: 55px;
-            margin-bottom: 10px;
+            width: 56px;
+            margin: 0 auto 14px;
         }
 
-        /* PORTAFOLIO */
-        .portfolio-item {
-            background: white;
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px #00000015;
-            margin-bottom: 25px;
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
         }
 
-        /* SOBRE MI */
-        .about {
+        .card p {
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+        }
+
+        /* =========================
+           PORTAFOLIO
+        ========================== */
+
+        #portafolio {
             background: #ffffff;
-            padding: 40px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px #00000015;
         }
 
-        /* CONTACTO */
+        .portfolio-card {
+            background: var(--blanco);
+            border-radius: 18px;
+            padding: 22px 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .portfolio-card + .portfolio-card {
+            margin-top: 18px;
+        }
+
+        .portfolio-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+        }
+
+        .portfolio-card p {
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+        }
+
+        /* =========================
+           SOBRE MÍ (VERSION CORTA)
+        ========================== */
+
+        #sobre-mi {
+            background: var(--gris-fondo);
+        }
+
+      .about-box {
+    background: var(--blanco);
+    border-radius: 18px;
+    padding: 28px 26px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    
+    /* NUEVO: iguala el ancho visual con servicios/portafolio */
+    max-width: 1100px;  
+    margin: 0 auto;
+}
+
+        .about-box p {
+            margin-bottom: 10px;
+            color: var(--texto-suave);
+            font-size: 0.98rem;
+        }
+
+        .about-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================== */
+
+        #contacto {
+            background: #ffffff;
+            padding-bottom: 80px;
+        }
+
         .contact {
             text-align: center;
         }
 
-        .contact a {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 18px;
-            background: #663bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 16px;
         }
 
-        .contact a:hover {
-            background: #4320c7;
+        .contact-buttons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: var(--morado-medio);
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 600;
+            min-width: 150px;
         }
+
+        .contact-buttons a:hover {
+            background: var(--morado-oscuro);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
+            background: #111;
+            color: #f1f1f1;
             text-align: center;
-            padding: 25px;
-            background: #222;
-            color: #eee;
-            margin-top: 40px;
+            padding: 18px 12px;
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           RESPONSIVE - TABLET / MOBILE
+        ========================== */
+
+        @media (max-width: 900px) {
+            /* Nav: se vuelve hamburguesa */
+            nav ul {
+                position: absolute;
+                top: 56px;
+                right: 0;
+                left: 0;
+                margin: 0;
+                padding: 10px 20px 16px;
+                background: linear-gradient(90deg, var(--morado-oscuro), var(--morado-medio));
+                flex-direction: column;
+                gap: 10px;
+                transform: translateY(-120%);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform 0.2s ease, opacity 0.2s ease;
+            }
+
+            nav ul.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 64px 18px 56px;
+            }
+
+            .hero-logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero-logo img {
+                width: 78px;
+                height: 78px;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            h2.section-title {
+                font-size: 1.7rem;
+            }
         }
     </style>
 </head>
-
 <body>
+    <!-- =========================
+         HEADER + NAV
+    ========================== -->
+    <header>
+        <div class="nav-wrapper">
+            <div class="logo-area">
+                <!-- Cambia el nombre del archivo si tu logo tiene otro -->
+                <img src="tu-logo.png" alt="Logo Hermosillo Apps" />
+                <div class="logo-text">Hermosillo<br />Apps</div>
+            </div>
 
-<!-- MENÚ -->
-<header>
-    <div class="logo">
-        <img src="logo.png" width="40" />
-        Hermosillo Apps
-    </div>
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-</header>
+            <nav>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 
-<!-- HERO -->
-<div class="hero" id="inicio">
-    <img src="logo.png" alt="Logo" />
-    <h1>Hermosillo Apps</h1>
-    <p style="font-size:18px;">Aplicaciones Empresariales en Microsoft Power Platform</p>
-</div>
-
-<!-- SERVICIOS -->
-<section id="servicios">
-    <h2>Servicios</h2>
-    <div class="services">
-
-        <div class="card">
-            <img src="powerapps.png" />
-            <h3>Power Apps</h3>
-            <p>Aplicaciones empresariales personalizadas.</p>
+                <ul id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="card">
-            <img src="powerautomate.png" />
-            <h3>Power Automate</h3>
-            <p>Automatización de procesos y flujos.</p>
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-logo">
+                <img src="tu-logo.png" alt="Hermosillo Apps" />
+            </div>
+            <h1>Hermosillo Apps</h1>
+            <p>Aplicaciones empresariales en Microsoft Power Platform para digitalizar procesos internos y mejorar la operación de tu negocio.</p>
+
+            <div class="hero-cta">
+                <a class="btn-primary" href="#contacto">Quiero más información</a>
+                <a
+                    class="btn-secondary"
+                    href="https://wa.me/526624323702"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Escríbeme por WhatsApp
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="powerbi.png" />
-            <h3>Power BI</h3>
-            <p>Dashboards y análisis de datos.</p>
+    <!-- =========================
+         SERVICIOS
+    ========================== -->
+    <section id="servicios">
+        <div class="container">
+            <h2 class="section-title">Servicios</h2>
+            <p class="section-subtitle">
+                Desarrollo de soluciones empresariales a la medida con Microsoft Power Platform.
+            </p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="powerapps.png" alt="Power Apps" />
+                    <h3>Power Apps</h3>
+                    <p>Aplicaciones empresariales personalizadas para controlar procesos, registros y reportes operativos.</p>
+                </div>
+
+                <div class="card">
+                    <img src="powerautomate.png" alt="Power Automate" />
+                    <h3>Power Automate</h3>
+                    <p>Automatización de flujos de trabajo, notificaciones, generación de documentos y movimientos en SharePoint.</p>
+                </div>
+
+                <div class="card">
+                    <img src="powerbi.png" alt="Power BI" />
+                    <h3>Power BI</h3>
+                    <p>Dashboards y reportes interactivos para toma de decisiones con datos en tiempo casi real.</p>
+                </div>
+
+                <div class="card">
+                    <img src="dataverse.png" alt="Dataverse" />
+                    <h3>Dataverse &amp; SharePoint</h3>
+                    <p>Modelado y organización de datos en la nube para asegurar trazabilidad, control y seguridad de la información.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="dataverse.png" />
-            <h3>Dataverse</h3>
-            <p>Bases de datos empresariales.</p>
+    <!-- =========================
+         PORTAFOLIO
+    ========================== -->
+    <section id="portafolio">
+        <div class="container">
+            <h2 class="section-title">Portafolio</h2>
+            <p class="section-subtitle">
+                Algunos ejemplos de soluciones reales que he desarrollado.
+            </p>
+
+            <div class="portfolio-card">
+                <h3>SCM – Subgerencia de Confiabilidad y Mantenimiento</h3>
+                <p>
+                    App empresarial para gestión de flotas ATUM, registro de fallas, seguimiento de disponibilidad,
+                    reportes y tableros de control para varios jefes de mantenimiento.
+                </p>
+            </div>
+
+            <div class="portfolio-card">
+                <h3>TAD Hermosillo — Aplicaciones internas</h3>
+                <p>
+                    Sistemas personalizados para control de documentos, registro de mantenimiento, reportes de operación,
+                    pases de acceso y otros procesos internos de la terminal.
+                </p>
+            </div>
+
+            <div class="portfolio-card">
+                <h3>Automatización con Power Automate</h3>
+                <p>
+                    Flujos automáticos para carga de archivos, generación de PDFs, envío de notificaciones y creación de
+                    reportes sin intervención manual.
+                </p>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="sharepoint.png" />
-            <h3>SharePoint</h3>
-            <p>Gestión documental y automatización.</p>
-        </div>
+    <!-- =========================
+         SOBRE MÍ (RESUMIDO)
+    ========================== -->
+    <section id="sobre-mi">
+        <div class="container">
+            <h2 class="section-title">Sobre mí</h2>
 
+            <div class="about-box">
+        <p>
+            Soy <strong>Jorge Camacho</strong>, Ingeniero en Sistemas con más de 
+            <strong>20 años como Jefe de Mantenimiento</strong> en la industria petrolera.
+        </p>
+
+        <p>
+            Después de años enfrentando problemas operativos reales -papeles, controles, reportes tardíos,
+            procesos manuales— encontré en <strong>Microsoft Power Platform</strong> la manera de 
+            resolverlos de forma moderna, rápida y eficiente.
+        </p>
+
+        <p>
+            Hoy desarrollo <strong>aplicaciones empresariales a la medida</strong>, combinando mi 
+            experiencia operativa en campo con mi formación profesional en sistemas para crear 
+            soluciones que realmente resuelven necesidades empresariales.
+        </p>
+               </div>
     </div>
 </section>
 
-<!-- PORTAFOLIO -->
-<section id="portafolio">
-    <h2>Portafolio</h2>
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+    <section id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">
+                Si quieres platicar de un proyecto o simplemente explorar ideas, mándame un mensaje.
+            </p>
 
-    <div class="portfolio-item">
-        <h3>SCM – Subgerencia de Confiabilidad y Mantenimiento</h3>
-        <p>Desarrollo de app empresarial para gestión de flotas ATUM, fallas, reportes y disponibilidad.</p>
-    </div>
+            <div class="contact">
+                <div class="contact-buttons">
+                    <a
+                        href="https://wa.me/526624323702"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp
+                    </a>
+                    <a href="mailto:jocamacho.dev@gmail.com">
+                        Enviar correo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="portfolio-item">
-        <h3>TAD Hermosillo — Aplicaciones internas</h3>
-        <p>Sistemas personalizados para control de documentos, registros de mantenimiento y reportes operativos.</p>
-    </div>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+        © 2025 Hermosillo Apps – Todos los derechos reservados.
+    </footer>
 
-    <div class="portfolio-item">
-        <h3>Automatización con Power Automate</h3>
-        <p>Flujos automáticos para carga de archivos, generación de PDFs, envío de notificaciones y dashboards.</p>
-    </div>
-</section>
+    <!-- =========================
+         SCRIPT NAV MÓVIL
+    ========================== -->
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navMenu = document.getElementById("navMenu");
 
-<!-- SOBRE MI -->
-<section id="sobre-mi">
-    <h2>Sobre mí</h2>
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("open");
+        });
 
-    <div class="about">
-        <p>
-            Soy <strong>Jorge Camacho</strong>, Ingeniero en Sistemas Computacionales con
-            <strong>más de 20 años de experiencia como Jefe de Mantenimiento</strong> en la industria petrolera.
-        </p>
-
-        <p>
-            A lo largo de mi carrera he trabajado directamente con
-            <strong>operaciones, mantenimiento, confiabilidad y administración de activos</strong>,
-            lo que me ha dado una comprensión profunda de las
-            <strong>necesidades reales de información, control y trazabilidad</strong>
-            que requieren las empresas para operar con eficiencia y seguridad.
-        </p>
-
-        <p>
-            Con el tiempo descubrí que muchos de los problemas operativos que enfrentamos día a día
-            podían resolverse mejorando los flujos de información.
-            Esa experiencia me llevó a especializarme en <strong>Microsoft Power Platform</strong>,
-            desarrollando soluciones empresariales a la medida con:
-        </p>
-
-        <ul>
-            <li>Power Apps</li>
-            <li>Power Automate</li>
-            <li>Power BI</li>
-            <li>SharePoint</li>
-            <li>Dataverse</li>
-        </ul>
-
-        <p>
-            Mis aplicaciones ayudan a los equipos a
-            <strong>digitalizar procesos, reducir tiempos, eliminar papel, automatizar reportes operativos</strong>
-            y mejorar la toma de decisiones mediante información en tiempo real.
-        </p>
-
-        <p>
-            <strong>
-            Mi formación como Ingeniero en Sistemas, sumada a más de 20 años en mantenimiento industrial,
-            me permite entender tanto la lógica de negocio como la realidad del piso de planta.
-            </strong>
-            Esa perspectiva dual es la base de cada solución que desarrollo.
-        </p>
-    </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto">
-    <h2>Contacto</h2>
-
-    <div class="contact">
-        <a href="https://wa.me/526624323702" target="_blank">WhatsApp</a>
-        <a href="mailto:jocamacho.dev@gmail.com">Enviar correo</a>
-    </div>
-</section>
-
-<footer>
-    © 2025 Hermosillo Apps – Todos los derechos reservados.
-</footer>
-
+        // Cerrar menú al hacer clic en un enlace (en móvil)
+        navMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("open");
+            });
+        });
+    </script>
 </body>
 </html>
